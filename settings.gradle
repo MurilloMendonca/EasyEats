@@ -1,0 +1,2 @@
+rootProject.name='EasyEats'
+include ':app'
