@@ -39,9 +39,14 @@ public class Inicial extends AppCompatActivity {
         props.setProperty("user","fred");
         props.setProperty("password","secret");
         props.setProperty("ssl","true");
-        Connection conn = DriverManager.getConnection(url, props);
+        try {
+            Connection conn = DriverManager.getConnection(url, props);
+             url = "jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true";
+             conn = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        String url = "jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true";
-        Connection conn = DriverManager.getConnection(url);
+
     }
 }
