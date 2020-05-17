@@ -62,9 +62,5 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void onClick (View v)
-    {
-        TextView a = findViewById(R.id.textView2);
-        a.setText("Testando. 1. 2");
-    }
+
 }
