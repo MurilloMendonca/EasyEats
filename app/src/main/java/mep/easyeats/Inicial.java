@@ -7,8 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import java.sql.*;
-import java.util.Properties;
+
 
 public class Inicial extends AppCompatActivity {
 
@@ -34,18 +33,7 @@ public class Inicial extends AppCompatActivity {
             }
         });
 
-        String url = "jdbc:postgresql://localhost/test";
-        Properties props = new Properties();
-        props.setProperty("user","fred");
-        props.setProperty("password","secret");
-        props.setProperty("ssl","true");
-        try {
-            Connection conn = DriverManager.getConnection(url, props);
-             url = "jdbc:postgresql://localhost/test?user=fred&password=secret&ssl=true";
-             conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
 
 
     }
