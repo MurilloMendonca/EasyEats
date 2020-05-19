@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Properties;
 
 import mep.easyeats.SignUp;
 
@@ -16,14 +17,18 @@ public class DB extends _Default implements Runnable{
     private Connection conn;
     private String host="192.168.0.113";
     private String db = "easyEats";
-    private int port = 5432;
-    private String user = "superBD";
-    private String pass="pass";
+    private int port = 55264;
+    private String user = "testeDB";
+    private String pass="";
     private String url = "jdbc:postgresql://%s:%d/%s";
+    private Properties props = new Properties();
 
     public DB()  {
         super();
-        this.url = String.format(this.url,this.host,this.port,this.db);
+        props.setProperty("user","testeBD");
+        props.setProperty("password","nextel111932");
+        props.setProperty("ssl","true");
+        this.url = "jdbc:postgresql://192.168.0.113:5432/easyeats" ;
 
         this.conecta();
         this.disconecta();
@@ -33,7 +38,7 @@ public class DB extends _Default implements Runnable{
     public void run() {
         try {
             Class.forName("org.postgresql.Driver");
-            this.conn = DriverManager.getConnection(this.url, this.user, this.pass);
+            this.conn = DriverManager.getConnection(this.url, this.props);
         } catch (Exception e) {
             this._mensagem = e.getMessage();
             this._status = false;
