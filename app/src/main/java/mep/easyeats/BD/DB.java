@@ -25,10 +25,10 @@ public class DB extends _Default implements Runnable{
 
     public DB()  {
         super();
-        props.setProperty("user","testeBD");
-        props.setProperty("password","nextel111932");
+        props.setProperty("user","tsgcavlyuuqpxz");
+        props.setProperty("password","785e4ce0190c7ebe76a0535dca9c7b87aeda56e550df9f4859bbfef75ad850df");
         props.setProperty("ssl","true");
-        this.url = "jdbc:postgresql://192.168.0.113:5432/easyeats" ;
+        this.url = "jdbc:postgresql://ec2-52-87-135-240.compute-1.amazonaws.com:5432/damkaa4ph631qs" ;
 
         this.conecta();
         this.disconecta();
